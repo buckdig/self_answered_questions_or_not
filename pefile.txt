@@ -11,10 +11,19 @@
 # okay, tell me the basic
 
 - concepts: pe file on `disk` "non-executed-yet" || `memory` "already-executed"
-- it's used by winLoader, load file into memory; however, winLoader only loaded the important "fields" first
+- it's used by winLoader, load file into memory; however, winLoader only loaded the important "structures" first
 => so file on disk and memory is the same, but their structures.
 - all memory loaded by code+data+resources+import_tables+export_tables+ other required module data structures is in one contiguous block of memory
+- pe file on 32 and 64 bit are different
 
 # too general, more specific plz? about its structure?
 
-- 
+- all of structures in pe file actually are noted in `winnt.h`, there are just few important structs:
+  + IMAGE_DOS_HEADER
+    +
+  + IMAGE_NT_HEADER (2 versions due to IMAGE_OPTIONAL_HEADER)
+    + Signature
+    + IMAGE_FILE_HEADER
+    + IMAGE_OPTIONAL_HEADER (32 and 64 bit different)
+  + 
+  + IMAGE_DATA_DIRECTORY
