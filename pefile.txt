@@ -1,0 +1,20 @@
+# wtf is pe file?
+
+- portable executable file which is only available in windows; linux uses ELF "executable and linkable format"
+
+# why should i learn this?
+
+- shouldn't if u're not reverse engineer
+- basic for re+forensics+contain lot of important fields (lot of other things i don't know)
+- ex: if i have txt file, i couldn't do much; however, .exe or .bin is different2me
+
+# okay, tell me the basic
+
+- concepts: pe file on `disk` "non-executed-yet" || `memory` "already-executed"
+- it's used by winLoader, load file into memory; however, winLoader only loaded the important "fields" first
+=> so file on disk and memory is the same, but their structures.
+- all memory loaded by code+data+resources+import_tables+export_tables+ other required module data structures is in one contiguous block of memory
+
+# too general, more specific plz? about its structure?
+
+- 
